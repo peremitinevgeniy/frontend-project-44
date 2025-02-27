@@ -17,9 +17,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-"bin": {
-  "brain-games": "bin/brain-games.js"
- }
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
-
-
