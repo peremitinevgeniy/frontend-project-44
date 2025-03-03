@@ -1,12 +1,18 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import game from '../src/cli.js';
+
+const game = () => {
+  const name = readlineSync.question('Welcome to the Even Game! What is your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
 
 const isEvenGame = () => {
   const name = game();
-  let sum = 0;
+  let score = 0;
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
-  do {
+  while (score < 3) {
     const getRandomInt = () => Math.floor(Math.random() * 100) + 1;
     const isEven = (num) => num % 2 === 0;
     const getRandomNum = getRandomInt();
@@ -14,23 +20,22 @@ const isEvenGame = () => {
     console.log(`Question: ${getRandomNum}`);
 
     const correctAnswer = isEven(getRandomNum) ? 'yes' : 'no';
-    const firstAnswer = readlineSync.question('Your answer is: ');
+    const userAnswer = readlineSync.question('Your answer is: ');
 
-    if (firstAnswer.toLowerCase() === correctAnswer) {
-      sum += 1;
+    if (userAnswer.toLowerCase() === correctAnswer) {
+      score += 1;
       console.log('Correct!');
     } else {
       console.log(
-        `${firstAnswer} is wrong answer ;(. Correct answer is ${correctAnswer}.`,
+        `${userAnswer} is a wrong answer ;(. The correct answer is ${correctAnswer}.`,
       );
-      console.log(`let's try again, ${name}`);
-      return;
+      console.log(`Let's try again, ${name}!`);
+      return name;
     }
-  } while (sum < 3);
-
-  if (sum === 3) {
-    console.log(`Congratulations, ${name}`);
   }
+
+  console.log(`Congratulations, ${name}! Your score is: ${score}`);
+  return name;
 };
 
 isEvenGame();
