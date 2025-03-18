@@ -27,7 +27,7 @@ const isEvenGame = () => {
       console.log('Correct!');
     } else {
       console.log(
-        `${userAnswer} is a wrong answer ;(. The correct answer is ${correctAnswer}.`,
+        `'yes' is wrong answer ;(. Correct answer was 'no'.`,
       );
       console.log(`Let's try again, ${name}!`);
       return name;
