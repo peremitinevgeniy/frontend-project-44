@@ -43,7 +43,7 @@ const playGame = () => {
 
     if (answer === hiddenValue) {
       console.log(
-        `'1' is wrong answer ;(. Correct answer was '15'.`,
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       console.log(`let's try again, ${name}!`);
       return;

@@ -27,7 +27,7 @@ const main = () => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'1' is wrong answer ;(. Correct answer was '25'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`let's try again, ${name}!`);
       return;
     }
